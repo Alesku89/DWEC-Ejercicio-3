@@ -5,27 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
-
+    <script>
+        function tabla() {
+           let num = parseInt(document.getElementById("numero").value);
+           table="";
+           setTimeout(() => {
+               if ( num >= 0 & num <= 9 ) {
+                   document.querySelector("span").innerText="";
+               for ( let i = 0; i <= 9; i++) {
+                   table+=`<tr>${num} * ${i} = ${i*num}</tr><br>`;
+                   document.querySelector("ul").innerHTML=table;
+               }
+               } else {
+                   document.querySelector("span").innerText=" El número introducido debe estar comprendido entre 0 y 9";
+               }
+           }, 3000);
+           
+          
+        }
+   </script>
 </head>
-<script>
-     function tabla() {
-        let num = parseInt(document.getElementById("numero").value);
-        table="";
-        setTimeout(() => {
-            if ( num >= 0 & num <= 9 ) {
-                document.querySelector("span").innerText="";
-            for ( let i = 0; i <= 9; i++) {
-                table+=`<tr>${num} * ${i} = ${i*num}</tr><br>`;
-                document.querySelector("ul").innerHTML=table;
-            }
-            } else {
-                document.querySelector("span").innerText=" El número introducido debe estar comprendido entre 0 y 9";
-            }
-        }, 3000);
-        
-       
-     }
-</script>
 <body>
     <main>
         <form>
